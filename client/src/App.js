@@ -14,28 +14,28 @@ import setAuthToken from './utils/setAuthToken';
 import './App.css';
 
 if (localStorage.token) {
-  setAuthToken(localStorage.token);
+    setAuthToken(localStorage.token);
 }
 
 const App = () => {
-  useEffect(() => {
-    store.dispatch(loadUser());
-  }, []);
+    useEffect(() => {
+        store.dispatch(loadUser());
+    }, []);
 
-  return (
-    <Provider store={store}>
-      <Router>
-        <Routes>
-          <Route path='/*' element={<Main />}>
-            <Route index element={<Landing />} />
-            <Route path='register' element={<Register />} />
-            <Route path='login' element={<Login />} />
-            <Route path='dashboard' element={<Dashboard />} />
-          </Route>
-        </Routes>
-      </Router>
-    </Provider>
-  );
+    return (
+        <Provider store={store}>
+            <Router>
+                <Routes>
+                    <Route path="/*" element={<Main />}>
+                        <Route index element={<Landing />} />
+                        <Route path="register" element={<Register />} />
+                        <Route path="login" element={<Login />} />
+                        <Route path="dashboard" element={<Dashboard />} />
+                    </Route>
+                </Routes>
+            </Router>
+        </Provider>
+    );
 };
 
 export default App;
